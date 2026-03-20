@@ -11,7 +11,7 @@ class SiteSettings(SingletonModel):
     header_cta_text = models.CharField("Текст кнопки хедеру", max_length=60, default="Отримати консультацію")
 
     # --- Hero ---
-    hero_title = models.CharField("Заголовок hero", max_length=120, default="ДОСТАВКА ВАНТАЖУ З КИТАЮ")
+    hero_title = models.CharField("Заголовок hero", max_length=120, default="Доставка вантажу з Китаю")
     hero_subtitle = models.CharField(
         "Підзаголовок hero", max_length=120,
         default="7–10 днів • від $5,95/кг • з гарантією строків",

@@ -7,6 +7,13 @@
         </a>
 
         <nav class="header-nav" aria-label="Головна навігація">
+            <ul class="header-menu">
+                <li><a href="#delivery-formats" class="header-menu-link">Послуги</a></li>
+                <li><a href="#benefits" class="header-menu-link">Переваги</a></li>
+                <li><a href="#cooperation" class="header-menu-link">Співпраця</a></li>
+                <li><a href="#faq" class="header-menu-link">FAQ</a></li>
+                <li><a href="#contact" class="header-menu-link">Контакти</a></li>
+            </ul>
             <a href="tel:{{ site_settings.header_phone|cut:' ' }}" class="header-phone">
                 {{ site_settings.header_phone }}
             </a>
@@ -24,6 +31,15 @@
     </div>
 
     <div class="header-nav-mobile" id="header-nav-mobile" aria-hidden="true">
+        <nav class="header-menu-mobile" aria-label="Мобільна навігація">
+            <ul class="header-menu-mobile-list">
+                <li><a href="#delivery-formats" class="header-menu-mobile-link">Послуги</a></li>
+                <li><a href="#benefits" class="header-menu-mobile-link">Переваги</a></li>
+                <li><a href="#cooperation" class="header-menu-mobile-link">Співпраця</a></li>
+                <li><a href="#faq" class="header-menu-mobile-link">FAQ</a></li>
+                <li><a href="#contact" class="header-menu-mobile-link">Контакти</a></li>
+            </ul>
+        </nav>
         <a href="tel:{{ site_settings.header_phone|cut:' ' }}" class="header-phone">
             {{ site_settings.header_phone }}
         </a>

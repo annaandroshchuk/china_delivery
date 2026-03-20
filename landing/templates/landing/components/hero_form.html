@@ -14,28 +14,37 @@
         <!-- Left: text content -->
         <div class="hero-content">
 
-            <!-- Delivery mode pills -->
-            <div class="hero-pills">
-                <span class="hero-pill hero-pill--active">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M1 6.5L4.5 2l1 3 4-1.5L5 9l-1-3L1 6.5z"/></svg>
-                    Авіа Експрес 7–9 днів
-                </span>
-                <span class="hero-pill">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 7l3-3 3 3 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    Авіа 10–14 днів
-                </span>
-                <span class="hero-pill">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h10M2 8V5l4-3 4 3v3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    Море 45–55 днів
-                </span>
-                <span class="hero-pill">Авто</span>
-            </div>
-
             <!-- Main headline -->
-            <h1 class="hero-title">{{ site_settings.hero_title }}</h1>
+            <h1 class="hero-title">
+                {% with title_parts=site_settings.hero_title|split_title %}
+                <span class="hero-title-line1">{{ title_parts.0 }}</span>
+                <span class="hero-title-line2">{{ title_parts.1 }}</span>
+                {% endwith %}
+            </h1>
 
             <!-- Kicker -->
-            <p class="hero-kicker">{{ site_settings.hero_subtitle }}</p>
+            <div class="hero-kicker">
+                {% for item in site_settings.hero_subtitle|split_by_bullet %}
+                <div class="hero-kicker-item">
+                    <svg class="hero-kicker-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        {% if forloop.counter == 1 %}
+                        <!-- Calendar icon -->
+                        <path d="M15 3.333h-1.667V2.5c0-.46-.373-.833-.833-.833s-.833.373-.833.833v.833H8.333V2.5c0-.46-.373-.833-.833-.833s-.833.373-.833.833v.833H5c-.92 0-1.667.747-1.667 1.667v10c0 .92.747 1.667 1.667 1.667h10c.92 0 1.667-.747 1.667-1.667V5c0-.92-.747-1.667-1.667-1.667zm0 11.667H5V8.333h10v6.667z" fill="currentColor"/>
+                        {% elif forloop.counter == 2 %}
+                        <!-- Dollar/Price icon -->
+                        <path d="M10 1.667C5.4 1.667 1.667 5.4 1.667 10S5.4 18.333 10 18.333 18.333 14.6 18.333 10 14.6 1.667 10 1.667zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm.833-8.333h-1.666v-1.25c.46 0 .833-.373.833-.834 0-.46-.373-.833-.833-.833s-.833.373-.833.833H7.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v1.25h1.667c.46 0 .833.373.833.833s-.373.834-.833.834h-1.667v1.25h1.667c.46 0 .833.373.833.833s-.373.833-.833.833h-1.667v.834c0 .46-.373.833-.833.833s-.833-.373-.833-.833v-.834H7.5c-.46 0-.833-.373-.833-.833s.373-.833.833-.833h1.666v-1.25z" fill="currentColor"/>
+                        {% else %}
+                        <!-- Shield/Guarantee icon -->
+                        <path d="M10 1.667L3.333 5v4.167c0 4.167 3.333 7.5 6.667 8.333 3.334-.833 6.667-4.166 6.667-8.333V5L10 1.667zm0 2.033L15 6.25v2.917c0 3.25-2.5 6.083-5 6.917-2.5-.834-5-3.667-5-6.917V6.25l5-2.55z" fill="currentColor"/>
+                        {% endif %}
+                    </svg>
+                    <span class="hero-kicker-label">{{ item }}</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Description -->
+            <p class="hero-description">{{ site_settings.hero_description }}</p>
 
             <!-- CTA row -->
             <div class="hero-cta-row">
