@@ -97,10 +97,10 @@
 /* Main title */
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 4vw, 2.5rem);
-    font-weight: var(--fw-black);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.6rem, 4vw, 1.7rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
     color: var(--color-white);
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@
 .hero-title-line1,
 .hero-title-line2 {
     display: block;
-    line-height: 1.15;
+    line-height: 1.5;
     white-space: nowrap;
 }
 
@@ -248,10 +248,11 @@
 .hero-form-title {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
-    font-weight: var(--fw-heavy);
+    font-weight: 300;
     color: var(--color-primary);
-    line-height: var(--lh-snug);
+    line-height: 1.4;
     margin-bottom: var(--sp-2);
+    letter-spacing: 0.04em;
 }
 
 .hero-form-sub {
