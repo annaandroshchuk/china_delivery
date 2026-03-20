@@ -85,10 +85,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-    font-size: clamp(1.625rem, 4vw, 2.5rem);
-    letter-spacing: -0.02em;
+    font-size: clamp(1.2rem, 4vw, 1.9rem);
+    letter-spacing: 0.04em;
     margin-bottom: var(--sp-4);
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 .section-subtitle {

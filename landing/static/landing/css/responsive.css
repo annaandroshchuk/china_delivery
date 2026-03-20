@@ -135,6 +135,7 @@
     }
 
     .format-card { padding: var(--sp-6); }
+    .format-card-timing { font-size: clamp(1.375rem, 4vw, 1.75rem); }
     .cta-banner { padding-block: var(--sp-12); }
 
     .footer-socials { gap: var(--sp-2); }
