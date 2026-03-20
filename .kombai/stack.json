@@ -1,0 +1,27 @@
+// Kombai Tech Stack Configuration
+// Each value must be a string or an array of strings.
+// Example: "Framework": "Vite" or "Project Type": ["React", "Vue"]
+{
+  "Project Type": [
+    "Vanilla JS",
+    "Django Web App"
+  ],
+  "Framework": "Django",
+  "Build Tool": "None",
+  "Component Library": "None",
+  "Tailwind Version": "None",
+  "TS/JS": "JS",
+  "State Management": "None",
+  "API Client": "HTMX",
+  "ORM/Client Library": "Django ORM",
+  "HTTP Server Framework": "Django",
+  "Charting Library": "None",
+  "Animation Library": "None",
+  "Authentication": "Django Admin",
+  "Server Runtime": "Python 3.13",
+  "Package Manager": "pip",
+  "Deployment Platform": "Gunicorn",
+  "Icon Set": "Inline SVG",
+  "Language backend": "Python",
+  "Language frontend": "Django Templates"
+}

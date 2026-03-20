@@ -1,0 +1,58 @@
+{% load static landing_tags %}<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Доставка вантажу з Китаю 7–10 днів від $5,95/кг. Wingo — логістика під ключ, митне оформлення, гарантія строків.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Доставка вантажу з Китаю — Wingo">
+    <meta property="og:description" content="Доставляємо вантажі з Китаю за 7–10 днів від $5,95/кг. Прозора вартість, офіційний договір, персональний менеджер.">
+    <meta property="og:type" content="website">
+    <title>{% block title %}Доставка вантажу з Китаю — Wingo{% endblock %}</title>
+
+    {% if site_settings.gtm_container_id %}
+    {% gtm_head site_settings.gtm_container_id %}
+    {% endif %}
+    <script src="{% static 'landing/js/datalayer-init.js' %}"></script>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="{% static 'landing/fonts/Druk Wide Cyr Heavy.otf' %}" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="{% static 'landing/fonts/GoogleSans-Regular.ttf' %}" as="font" type="font/ttf" crossorigin>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="{% static 'landing/css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/hero.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/sections.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/faq.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/responsive.css' %}">
+</head>
+<body>
+    {% if site_settings.gtm_container_id %}
+    {% gtm_body site_settings.gtm_container_id %}
+    {% endif %}
+
+    {% include "landing/components/header.html" %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "landing/components/footer.html" %}
+    {% include "landing/components/popup_form.html" %}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js"></script>
+    <script src="{% static 'landing/js/htmx-config.js' %}"></script>
+    <script src="{% static 'landing/js/main.js' %}"></script>
+    <script src="{% static 'landing/js/carousel.js' %}"></script>
+    <script src="{% static 'landing/js/faq.js' %}"></script>
+    <script src="{% static 'landing/js/forms.js' %}"></script>
+</body>
+</html>

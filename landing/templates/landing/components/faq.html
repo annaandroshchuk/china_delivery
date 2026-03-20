@@ -1,0 +1,41 @@
+{% load static %}
+<section class="section section--light faq-section" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Відповіді на запитання</span>
+            <h2 class="section-title">Поширені питання</h2>
+        </div>
+
+        <div class="faq-list" role="list">
+            {% for item in faqs %}
+            <div class="faq-item" role="listitem">
+                <button
+                    class="faq-question"
+                    aria-expanded="false"
+                    aria-controls="faq-answer-{{ item.pk }}"
+                    type="button"
+                >
+                    <span class="faq-question-text">{{ item.question }}</span>
+                    <span class="faq-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-{{ item.pk }}" data-open="false" role="region">
+                    <div class="faq-answer-inner">
+                        <div class="faq-answer-content">
+                            {{ item.answer|linebreaksbr }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="faq-empty">FAQ незабаром буде наповнений.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Wave to light (contact) -->
+    <div class="wave-sep" aria-hidden="true" style="margin-top: var(--sp-12);">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EEF5FF" d="M0,36 C360,0 1080,56 1440,20 L1440,56 L0,56 Z"/>
+        </svg>
+    </div>
+</section>

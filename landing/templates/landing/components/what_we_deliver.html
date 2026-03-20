@@ -1,0 +1,90 @@
+{% load static %}
+<section class="section section--light what-we-deliver" id="what-we-deliver">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Товари та вантажі</span>
+            <h2 class="section-title">З чим працюємо</h2>
+            <p class="section-subtitle">Доставляємо товари для бізнесу, магазинів та виробництв, а також великогабаритні та нестандартні вантажі.</p>
+        </div>
+
+        <div class="swiper categories-swiper" id="categories-swiper">
+            <div class="swiper-wrapper">
+                {% if categories %}
+                    {% for cat in categories %}
+                    <div class="swiper-slide category-card">
+                        <div class="category-card-image">
+                            {% if cat.image %}
+                            <img src="{{ cat.image.url }}" alt="{{ cat.title }}" loading="lazy" width="240" height="200">
+                            {% else %}
+                            <div class="category-card-placeholder" aria-hidden="true">📦</div>
+                            {% endif %}
+                        </div>
+                        <p class="category-card-title">{{ cat.title }}</p>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    {% for item in "123456789"|make_list %}
+                    <div class="swiper-slide category-card">
+                        <div class="category-card-image">
+                            <div class="category-card-placeholder" aria-hidden="true">
+                                {% if forloop.counter == 1 %}🏭
+                                {% elif forloop.counter == 2 %}🔋
+                                {% elif forloop.counter == 3 %}💄
+                                {% elif forloop.counter == 4 %}🚜
+                                {% elif forloop.counter == 5 %}✨
+                                {% elif forloop.counter == 6 %}👗
+                                {% elif forloop.counter == 7 %}🚗
+                                {% elif forloop.counter == 8 %}🐾
+                                {% else %}📦{% endif %}
+                            </div>
+                        </div>
+                        <p class="category-card-title">
+                            {% if forloop.counter == 1 %}Обладнання для виробництв
+                            {% elif forloop.counter == 2 %}Батареї та сонячні станції
+                            {% elif forloop.counter == 3 %}Обладнання для салонів краси
+                            {% elif forloop.counter == 4 %}Сільгосптехніка та обладнання
+                            {% elif forloop.counter == 5 %}Косметика та beauty-гаджети
+                            {% elif forloop.counter == 6 %}Оптові поставки одягу та взуття
+                            {% elif forloop.counter == 7 %}Авто- та мотозапчастини
+                            {% elif forloop.counter == 8 %}Зоотовари
+                            {% else %}Та багато іншого{% endif %}
+                        </p>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="swiper-pagination categories-pagination"></div>
+            <div class="swiper-button-prev categories-prev"></div>
+            <div class="swiper-button-next categories-next"></div>
+        </div>
+
+        <!-- Collapsible: what we don't deliver -->
+        <div class="what-we-dont">
+            <button class="what-we-dont-toggle" aria-expanded="false" type="button" id="dont-toggle">
+                <span class="what-we-dont-title">Що не перевозимо</span>
+                <svg class="what-we-dont-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="what-we-dont-body" data-open="false" id="dont-body">
+                <div class="what-we-dont-body-inner">
+                    <ul class="what-we-dont-list">
+                        <li>Брендові речі та репліки</li>
+                        <li>Вибухонебезпечні та легкозаймисті матеріали</li>
+                        <li>Продукти харчування</li>
+                        <li>Лікарські засоби та БАДи</li>
+                        <li>Автомобілі та мотоцикли</li>
+                        <li>Роздрібні товари для власного використання</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave to white -->
+    <div class="wave-sep" aria-hidden="true" style="margin-top: var(--sp-12);">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#ffffff" d="M0,36 C360,0 1080,56 1440,20 L1440,56 L0,56 Z"/>
+        </svg>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+{% load static %}
+<section class="section cta-banner cta-banner--accent" id="cta-2">
+    <div class="container cta-banner-inner">
+        <div class="cta-banner-content">
+            <h2 class="cta-banner-title">{{ site_settings.cta_2_title }}</h2>
+            <p class="cta-banner-text">{{ site_settings.cta_2_text }}</p>
+        </div>
+        <div class="cta-banner-action">
+            <button class="btn btn-white btn-lg js-open-popup" data-form-location="cta-2" type="button">
+                Отримати розрахунок
+            </button>
+        </div>
+    </div>
+
+    <!-- Wave to light section -->
+    <div class="wave-sep" aria-hidden="true" style="margin-top: var(--sp-8);">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EEF5FF" d="M0,10 C360,56 1080,0 1440,40 L1440,56 L0,56 Z"/>
+        </svg>
+    </div>
+</section>

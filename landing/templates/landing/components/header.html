@@ -1,0 +1,35 @@
+{% load static %}
+<header class="site-header" id="site-header">
+    <div class="container header-inner">
+        <a href="/" class="header-logo" aria-label="Wingo — на головну">
+            <img class="header-logo-white" src="{% static 'landing/images/logo-white.svg' %}" alt="Wingo" width="120" height="38" onerror="this.style.display='none'">
+            <img class="header-logo-default" src="{% static 'landing/images/logo.svg' %}" alt="Wingo" width="120" height="38">
+        </a>
+
+        <nav class="header-nav" aria-label="Головна навігація">
+            <a href="tel:{{ site_settings.header_phone|cut:' ' }}" class="header-phone">
+                {{ site_settings.header_phone }}
+            </a>
+            <button class="btn btn-outline-white header-cta js-open-popup" data-form-location="header" type="button">
+                {{ site_settings.header_cta_text }}
+            </button>
+        </nav>
+
+        <button class="header-burger" id="header-burger"
+            aria-label="Відкрити меню"
+            aria-expanded="false"
+            aria-controls="header-nav-mobile">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <div class="header-nav-mobile" id="header-nav-mobile" aria-hidden="true">
+        <a href="tel:{{ site_settings.header_phone|cut:' ' }}" class="header-phone">
+            {{ site_settings.header_phone }}
+        </a>
+        <button class="btn btn-primary js-open-popup" data-form-location="header-mobile" type="button">
+            {{ site_settings.header_cta_text }}
+        </button>
+    </div>
+</header>
+<div class="header-mobile-backdrop" id="header-mobile-backdrop"></div>

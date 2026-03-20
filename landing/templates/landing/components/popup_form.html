@@ -1,0 +1,19 @@
+{% load static %}
+<div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Форма заявки" aria-hidden="true">
+    <div class="popup-inner">
+        <button class="popup-close" id="popup-close" aria-label="Закрити форму" type="button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <div class="popup-content">
+            <h2 class="popup-title">Отримайте персональну пропозицію</h2>
+            <p class="popup-subtitle">Логістичний експерт прорахує оптимальний маршрут та підбере найкращий формат доставки без прихованих платежів.</p>
+
+            <div id="form-wrapper-popup">
+                {% include "landing/components/lead_form_partial.html" with form=popup_form form_location="popup" %}
+            </div>
+        </div>
+    </div>
+</div>

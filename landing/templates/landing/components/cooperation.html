@@ -1,0 +1,114 @@
+{% load static %}
+<section class="section section--white cooperation" id="cooperation">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Як ми працюємо</span>
+            <h2 class="section-title">Варіанти співпраці</h2>
+        </div>
+
+        <div class="coop-grid">
+
+            <!-- Доставка під ключ -->
+            <div class="coop-card js-expandable-card">
+                <div class="coop-card-header">
+                    <div class="coop-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" fill="none" width="56" height="56" aria-hidden="true">
+                            <circle cx="24" cy="30" r="10" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="30" r="3" fill="currentColor"/>
+                            <path d="M34 30h20M44 22l10 8-10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="coop-card-title">Доставка «під ключ»</h3>
+                    <button class="coop-card-toggle" aria-expanded="false" type="button" aria-label="Розгорнути деталі">
+                        <span class="coop-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <p class="coop-card-desc">Повністю беремо на себе весь процес імпорту з Китаю. Контролюємо кожен етап, знижуємо ризики й оптимізуємо витрати.</p>
+                <div class="coop-card-details" data-open="false">
+                    <div class="coop-card-details-inner">
+                        <div class="coop-details-content">
+                            <ul class="coop-details-list">
+                                <li>Пошук та перевірка постачальника</li>
+                                <li>Викуп товару, оплата постачальникам</li>
+                                <li>Оформлення документів на експорт</li>
+                                <li>Підготовка документів для сертифікації</li>
+                                <li>Організація доставки до України</li>
+                                <li>Митне очищення</li>
+                                <li>Доставка одержувачу та постановка на баланс</li>
+                            </ul>
+                            <button class="btn btn-primary js-open-popup" data-form-location="coop-turnkey" type="button">
+                                Замовити послугу
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Логістичні послуги -->
+            <div class="coop-card js-expandable-card">
+                <div class="coop-card-header">
+                    <div class="coop-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" fill="none" width="56" height="56" aria-hidden="true">
+                            <circle cx="16" cy="48" r="6" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="48" cy="48" r="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 48h20M10 48H6V24l16-8h24l8 12v12H54" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 36h40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="coop-card-title">Логістичні послуги</h3>
+                    <button class="coop-card-toggle" aria-expanded="false" type="button" aria-label="Розгорнути деталі">
+                        <span class="coop-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <p class="coop-card-desc">Якщо у вас вже є постачальник, організуємо надійну доставку оптимальним маршрутом з урахуванням термінів та бюджету.</p>
+                <div class="coop-card-details" data-open="false">
+                    <div class="coop-card-details-inner">
+                        <div class="coop-details-content">
+                            <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:var(--lh-loose);margin-bottom:var(--sp-5);">Забезпечимо повний контроль перевезення та супровід на всьому шляху від складу постачальника до вашого складу в Україні.</p>
+                            <button class="btn btn-primary js-open-popup" data-form-location="coop-logistics" type="button">
+                                Замовити послугу
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Митно-брокерські послуги -->
+            <div class="coop-card js-expandable-card">
+                <div class="coop-card-header">
+                    <div class="coop-card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" fill="none" width="56" height="56" aria-hidden="true">
+                            <rect x="12" y="8" width="40" height="48" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 22h20M22 30h20M22 38h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="46" cy="48" r="8" fill="currentColor" fill-opacity=".12"/>
+                            <path d="M42 48l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="coop-card-title">Митно-брокерські послуги</h3>
+                    <button class="coop-card-toggle" aria-expanded="false" type="button" aria-label="Розгорнути деталі">
+                        <span class="coop-toggle-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <p class="coop-card-desc">Професійно підготуємо документи та організуємо швидке митне оформлення в Україні за 1 день.</p>
+                <div class="coop-card-details" data-open="false">
+                    <div class="coop-card-details-inner">
+                        <div class="coop-details-content">
+                            <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:var(--lh-loose);margin-bottom:var(--sp-5);">Маємо штат сертифікованих брокерів з досвідом понад 10 років. Уникнете затримок і штрафів завдяки правильному декларуванню.</p>
+                            <button class="btn btn-primary js-open-popup" data-form-location="coop-customs" type="button">
+                                Замовити послугу
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Wave to light -->
+    <div class="wave-sep" aria-hidden="true" style="margin-top: var(--sp-12);">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EEF5FF" d="M0,20 C480,56 960,0 1440,36 L1440,56 L0,56 Z"/>
+        </svg>
+    </div>
+</section>

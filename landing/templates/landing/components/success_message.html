@@ -1,0 +1,18 @@
+{% load static %}
+<div class="success-message" role="alert" aria-live="polite">
+    <div class="success-icon" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="28" fill="#2ECC71" fill-opacity="0.12"/>
+            <circle cx="28" cy="28" r="20" fill="#2ECC71"/>
+            <path d="M19 28L25 34L37 22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h3 class="success-title">Ваша заявка прийнята!</h3>
+    <p class="success-text">
+        Найближчим часом з вами зв'яжеться наш логістичний експерт,
+        а поки ви можете скористатися нашим АІ-калькулятором для розрахунку вартості доставки.
+    </p>
+    <a href="{{ site_settings.ai_calculator_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        Запустити АІ калькулятор
+    </a>
+</div>

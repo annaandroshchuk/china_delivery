@@ -1,0 +1,41 @@
+{% load static %}
+<section class="section section--light contact-section" id="contact">
+    <div class="container">
+        <div class="contact-inner">
+            <div class="contact-text">
+                <span class="section-label">Зв'яжіться з нами</span>
+                <h2 class="contact-title">{{ site_settings.contact_form_title }}</h2>
+                <p class="contact-subtitle">{{ site_settings.contact_form_subtitle }}</p>
+
+                <div class="contact-info">
+                    <a href="tel:{{ site_settings.footer_phone|cut:' ' }}" class="contact-info-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="M5.3 2.9C4.8 2 3.7 1.7 2.8 2.2L1.8 2.8C.9 3.4.5 4.5.8 5.6 2 9.3 5.7 13 9.6 14.5c1.1.4 2.3-.1 2.9-1.1l.6-1.2c.5-.9.2-1.9-.6-2.4l-1.6-.8c-.7-.4-1.6-.2-2.1.5l-.2.2c-.6-.4-1.2-1-1.7-1.5-.5-.5-1-1.1-1.4-1.8l.2-.2c.7-.5.9-1.5.4-2.2L5.3 2.9z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                        </svg>
+                        {{ site_settings.footer_phone }}
+                    </a>
+                    <a href="mailto:{{ site_settings.footer_email }}" class="contact-info-link">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                            <path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                        </svg>
+                        {{ site_settings.footer_email }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-card" id="contact-form-wrapper">
+                <div id="form-wrapper-contact">
+                    {% include "landing/components/lead_form_partial.html" with form=contact_form form_location="contact" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave to dark footer -->
+    <div class="wave-sep" aria-hidden="true" style="margin-top: var(--sp-12);">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#060F22" d="M0,56 C480,0 960,40 1440,10 L1440,56 L0,56 Z"/>
+        </svg>
+    </div>
+</section>

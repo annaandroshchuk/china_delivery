@@ -1,0 +1,80 @@
+{% load static %}
+<form
+    class="lead-form"
+    id="form-{{ form_location }}"
+    hx-post="{% url 'landing:submit_lead' %}"
+    hx-target="#form-wrapper-{{ form_location }}"
+    hx-swap="innerHTML"
+    hx-indicator="#form-loader-{{ form_location }}"
+    novalidate
+    data-form-location="{{ form_location }}"
+>
+    {% csrf_token %}
+
+    <input type="hidden" name="form_location" value="{{ form_location }}">
+    <input type="hidden" name="page_url" value="" class="js-page-url">
+
+    {% for field in form.hidden_fields %}
+        {% if field.name != "form_location" %}{{ field }}{% endif %}
+    {% endfor %}
+
+    <div class="form-honeypot" aria-hidden="true">{{ form.website }}</div>
+
+    <div class="form-group{% if form.name.errors %} form-group--error{% endif %}">
+        <label for="{{ form.name.id_for_label }}-{{ form_location }}" class="form-label">Ім'я *</label>
+        <input
+            type="text"
+            id="{{ form.name.id_for_label }}-{{ form_location }}"
+            name="{{ form.name.html_name }}"
+            class="form-control"
+            placeholder="Ваше ім'я"
+            autocomplete="name"
+            value="{{ form.name.value|default:'' }}"
+            required
+        >
+        {% if form.name.errors %}<p class="form-error">{{ form.name.errors.0 }}</p>{% endif %}
+    </div>
+
+    <div class="form-group{% if form.phone.errors %} form-group--error{% endif %}">
+        <label for="{{ form.phone.id_for_label }}-{{ form_location }}" class="form-label">Телефон *</label>
+        <input
+            type="tel"
+            id="{{ form.phone.id_for_label }}-{{ form_location }}"
+            name="{{ form.phone.html_name }}"
+            class="form-control"
+            placeholder="+38 (___) ___-__-__"
+            autocomplete="tel"
+            value="{{ form.phone.value|default:'' }}"
+            required
+        >
+        {% if form.phone.errors %}<p class="form-error">{{ form.phone.errors.0 }}</p>{% endif %}
+    </div>
+
+    <div class="form-group{% if form.email.errors %} form-group--error{% endif %}">
+        <label for="{{ form.email.id_for_label }}-{{ form_location }}" class="form-label">Email</label>
+        <input
+            type="email"
+            id="{{ form.email.id_for_label }}-{{ form_location }}"
+            name="{{ form.email.html_name }}"
+            class="form-control"
+            placeholder="your@email.com"
+            autocomplete="email"
+            value="{{ form.email.value|default:'' }}"
+        >
+        {% if form.email.errors %}<p class="form-error">{{ form.email.errors.0 }}</p>{% endif %}
+    </div>
+
+    {% if form.non_field_errors %}
+    <p class="form-error form-error--global">{{ form.non_field_errors.0 }}</p>
+    {% endif %}
+
+    <button type="submit" class="btn btn-accent btn-full form-submit" id="form-loader-{{ form_location }}">
+        <span class="btn-text">Отримати розрахунок</span>
+        <span class="btn-loader" aria-hidden="true"></span>
+    </button>
+
+    <p class="form-disclaimer">
+        Натискаючи кнопку, ви погоджуєтесь з
+        <a href="#" class="form-disclaimer-link">умовами обробки персональних даних</a>
+    </p>
+</form>
