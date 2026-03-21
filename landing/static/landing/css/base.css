@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.04em;
     margin-bottom: var(--sp-4);
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: var(--fw-heavy);
 }
 
 .section-subtitle {
