@@ -33,8 +33,6 @@
 
     .benefits-grid { grid-template-columns: repeat(2, 1fr); }
 
-    .coop-grid { grid-template-columns: 1fr; }
-
     .formats-grid {
         grid-template-columns: 1fr;
         max-width: 480px;

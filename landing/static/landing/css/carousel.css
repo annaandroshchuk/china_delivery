@@ -2,8 +2,9 @@
    CAROUSEL — Swiper overrides + category cards
    ============================================================ */
 
-.categories-swiper {
-    padding-bottom: var(--sp-10) !important;
+/* ID + клас перебивають стилі Swiper без !important */
+#categories-swiper.swiper {
+    padding-bottom: var(--sp-10);
     overflow: visible;
 }
 
