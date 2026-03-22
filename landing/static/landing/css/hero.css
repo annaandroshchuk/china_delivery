@@ -38,6 +38,7 @@
     right: -5%;
     width: 65%;
     aspect-ratio: 1;
+    z-index: 0;
     background: radial-gradient(ellipse at center,
         rgba(56, 139, 253, 0.28) 0%,
         transparent 65%
@@ -49,6 +50,7 @@
     left: -15%;
     width: 50%;
     aspect-ratio: 1;
+    z-index: 0;
     background: radial-gradient(ellipse at center,
         rgba(30, 90, 200, 0.20) 0%,
         transparent 60%
@@ -60,14 +62,18 @@
     display: none;
 }
 
-/* Noise / grain texture overlay */
+/* Зерниста фактура поверх градієнта */
 .hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    z-index: 1;
+    background-image: var(--texture-grain);
+    background-size: 220px 220px;
+    background-repeat: repeat;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.55;
+    mix-blend-mode: soft-light;
 }
 
 /* ---- Inner layout ---- */

@@ -277,15 +277,38 @@
     right: -10%;
     width: 50%;
     aspect-ratio: 1;
+    z-index: 0;
     background: radial-gradient(ellipse at center, rgba(56,139,253,.22) 0%, transparent 65%);
     pointer-events: none;
 }
 
+/* Фактура (зерно) поверх градієнта */
+.cta-banner--dark::after,
+.cta-banner--accent::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: var(--texture-grain);
+    background-size: 220px 220px;
+    background-repeat: repeat;
+    pointer-events: none;
+    opacity: 0.42;
+    mix-blend-mode: soft-light;
+}
+
 .cta-banner-inner {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--sp-10);
+}
+
+.cta-banner > .wave-sep {
+    position: relative;
+    z-index: 2;
 }
 
 .cta-banner-content { max-width: 620px; }
@@ -349,6 +372,26 @@
     background: linear-gradient(145deg, #0A1628 0%, #1248A0 100%);
     border-color: transparent;
     color: var(--color-white);
+    isolation: isolate;
+}
+
+.format-card--express::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: var(--texture-grain);
+    background-size: 180px 180px;
+    background-repeat: repeat;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: soft-light;
+    z-index: 0;
+}
+
+.format-card--express > * {
+    position: relative;
+    z-index: 1;
 }
 
 .format-card--express:hover {
