@@ -22,6 +22,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Узгоджує різні сток-фото з палітрою сайту (синій / темно-синій) без зміни файлів */
+.category-card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+        165deg,
+        rgba(37, 99, 235, 0.14) 0%,
+        rgba(10, 22, 40, 0.2) 55%,
+        rgba(238, 245, 255, 0.06) 100%
+    );
 }
 
 .category-card-image img {
@@ -29,6 +47,8 @@
     height: 100%;
     object-fit: cover;
     transition: transform var(--t-slow);
+    position: relative;
+    z-index: 0;
 }
 
 .category-card:hover .category-card-image img {

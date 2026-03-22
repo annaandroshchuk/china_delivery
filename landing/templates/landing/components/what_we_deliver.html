@@ -23,32 +23,12 @@
                     </div>
                     {% endfor %}
                 {% else %}
-                    {% for item in "123456789"|make_list %}
+                    {% for item in fallback_categories %}
                     <div class="swiper-slide category-card">
                         <div class="category-card-image">
-                            <div class="category-card-placeholder" aria-hidden="true">
-                                {% if forloop.counter == 1 %}🏭
-                                {% elif forloop.counter == 2 %}🔋
-                                {% elif forloop.counter == 3 %}💄
-                                {% elif forloop.counter == 4 %}🚜
-                                {% elif forloop.counter == 5 %}✨
-                                {% elif forloop.counter == 6 %}👗
-                                {% elif forloop.counter == 7 %}🚗
-                                {% elif forloop.counter == 8 %}🐾
-                                {% else %}📦{% endif %}
-                            </div>
+                            <img src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy" width="800" height="600" decoding="async">
                         </div>
-                        <p class="category-card-title">
-                            {% if forloop.counter == 1 %}Обладнання для виробництв
-                            {% elif forloop.counter == 2 %}Батареї та сонячні станції
-                            {% elif forloop.counter == 3 %}Обладнання для салонів краси
-                            {% elif forloop.counter == 4 %}Сільгосптехніка та обладнання
-                            {% elif forloop.counter == 5 %}Косметика та beauty-гаджети
-                            {% elif forloop.counter == 6 %}Оптові поставки одягу та взуття
-                            {% elif forloop.counter == 7 %}Авто- та мотозапчастини
-                            {% elif forloop.counter == 8 %}Зоотовари
-                            {% else %}Та багато іншого{% endif %}
-                        </p>
+                        <p class="category-card-title">{{ item.title }}</p>
                     </div>
                     {% endfor %}
                 {% endif %}

@@ -6,6 +6,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
 
+from .category_fallback import FALLBACK_CATEGORY_CARDS
 from .forms import LeadForm
 from .models import DeliveryCategory, FAQ, LeadSubmission
 from .services.bitrix import create_bitrix_lead
@@ -25,6 +26,7 @@ def index(request: HttpRequest) -> HttpResponse:
     context = {
         "faqs": faqs,
         "categories": categories,
+        "fallback_categories": FALLBACK_CATEGORY_CARDS,
         "hero_form": hero_form,
         "contact_form": contact_form,
         "popup_form": popup_form,
